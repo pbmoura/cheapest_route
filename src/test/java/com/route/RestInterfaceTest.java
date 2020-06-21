@@ -23,7 +23,7 @@ public class RestInterfaceTest {
     public static final String DESTINATION = "SCL";
     public static final int COST = 10;
 
-    public static class TestContollerTestSparkApplication implements SparkApplication {
+    public static class TestControllerTestSparkApplication implements SparkApplication {
 
         @Override
         public void init() {
@@ -36,7 +36,7 @@ public class RestInterfaceTest {
     }
 
     @ClassRule
-    public static SparkServer<TestContollerTestSparkApplication> testServer = new SparkServer<>(RestInterfaceTest.TestContollerTestSparkApplication.class, 4567);
+    public static SparkServer<TestControllerTestSparkApplication> testServer = new SparkServer<>(RestInterfaceTest.TestControllerTestSparkApplication.class, 4567);
 
     @Test
     public void testGet() throws Exception {
