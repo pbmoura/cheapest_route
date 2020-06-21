@@ -24,7 +24,7 @@ public class CommandLineInterface {
             } catch (Exception e) {
                 System.out.println("Error searching for route " + routeInput);
             }
-        } while (!routeInput.isEmpty());
+        } while (true);
     }
 
     public Route find(String route) {

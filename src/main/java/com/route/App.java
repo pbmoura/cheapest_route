@@ -16,13 +16,14 @@ public class App {
         fileHandler = new RoutesFileHandler(filePath, routeFinder);
     }
 
-    public static void main(String... args) {
+    public static void main(String... args) throws InterruptedException {
         validateArgs(args);
         App app = new App(args[0]);
         app.loadData();
-//        CommandLineInterface cli = new CommandLineInterface(app);
+        CommandLineInterface cli = new CommandLineInterface(app);
         RestInterface restInterface = new RestInterface(app);
-        restInterface.run();
+        new Thread(restInterface::run).start();
+        cli.run();
     }
 
     protected static void validateArgs(String[] args) {
