@@ -6,6 +6,7 @@ import com.despegar.http.client.PostMethod;
 import com.despegar.sparkjava.test.SparkServer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.route.core.Route;
+import com.route.ui.RestInterface;
 import org.junit.ClassRule;
 import org.junit.Test;
 import spark.servlet.SparkApplication;

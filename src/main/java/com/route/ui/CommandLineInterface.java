@@ -1,5 +1,6 @@
-package com.route;
+package com.route.ui;
 
+import com.route.App;
 import com.route.core.Route;
 
 import java.io.Console;
