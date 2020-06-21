@@ -12,6 +12,10 @@ public class RouteFinder implements RouteFileListener {
         this.costs = costs;
     }
 
+    public RouteFinder() {
+        costs = new HashMap<>();
+    }
+
     public Route find(String origin, String destination) {
         Queue<Route> candidateRoutes = new LinkedList<>();
         Route bestRoute = null;
