@@ -16,7 +16,7 @@ public class App {
         fileHandler = new RoutesFileHandler(filePath, routeFinder);
     }
 
-    public static void main(String... args) throws InterruptedException {
+    public static void main(String... args) {
         validateArgs(args);
         App app = new App(args[0]);
         app.loadData();
