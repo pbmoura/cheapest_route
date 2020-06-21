@@ -61,7 +61,7 @@ public class RouteFinderTest {
     }
 
     @Test
-    public void twoHopsExistingShorrterButCostier() {
+    public void twoHopsExistingShorterButCostlier() {
         Route route = finder.find("A", "D");
         assertNotNull(route);
         assertEquals(6, route.getCost());

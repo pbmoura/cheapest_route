@@ -40,7 +40,7 @@ public class RouteTest {
     }
 
     @Test
-    public void copyContructor() {
+    public void copyConstructor() {
         Route route = new Route("A");
         Route copy = new Route(route);
         copy.add(new AbstractMap.SimpleEntry<>("B", 1));
