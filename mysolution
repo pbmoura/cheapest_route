@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar target/cheapest-route-1.0-SNAPSHOT.jar $1
+java -jar target/cheapest-route-1.0-SNAPSHOT-jar-with-dependencies.jar $1

@@ -4,6 +4,8 @@ import com.route.core.Route;
 import com.route.core.RouteFinder;
 import com.route.persistence.RoutesFileHandler;
 
+import java.io.IOException;
+
 public class App {
 
     private final RouteFinder routeFinder;
@@ -18,8 +20,9 @@ public class App {
         validateArgs(args);
         App app = new App(args[0]);
         app.loadData();
-        CommandLineInterface cli = new CommandLineInterface(app);
-        cli.run();
+//        CommandLineInterface cli = new CommandLineInterface(app);
+        RestInterface restInterface = new RestInterface(app);
+        restInterface.run();
     }
 
     protected static void validateArgs(String[] args) {
@@ -38,5 +41,9 @@ public class App {
 
     public Route find(String origin, String destination) {
         return routeFinder.find(origin, destination);
+    }
+
+    public void addRoute(String origin, String destination, int cost) throws IOException {
+        fileHandler.add(origin, destination, cost);
     }
 }
