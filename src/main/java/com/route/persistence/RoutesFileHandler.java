@@ -9,8 +9,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.stream.Stream;
 
 public class RoutesFileHandler {
-    private String filePath;
-    private RouteFileListener listener;
+    private final String filePath;
+    private final RouteFileListener listener;
 
     public RoutesFileHandler(String filePath, RouteFileListener listener) {
         this.filePath = filePath;
