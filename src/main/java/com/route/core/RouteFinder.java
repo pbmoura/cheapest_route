@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
-public class RouteFinder {
+public class RouteFinder implements RouteFileListener {
     final Map<String, Map<String, Integer>> costs;
 
     public RouteFinder(Map<String, Map<String, Integer>> costs) {
@@ -42,7 +42,8 @@ public class RouteFinder {
         }
     }
 
-    public void add(String origin, String destination, int cost) {
+    @Override
+    public void handleEntry(String origin, String destination, int cost) {
         Map<String, Integer> originMap = costs.computeIfAbsent(origin, k -> new HashMap<>());
         originMap.put(destination, cost);
     }

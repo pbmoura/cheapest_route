@@ -82,11 +82,11 @@ public class RouteFinderTest {
 
     @Test
     public void addRoutes() {
-        finder.add("x", "y", 1);
-        finder.add("x", "w", 2);
-        finder.add("y", "w", 3);
+        finder.handleEntry("x", "y", 1);
+        finder.handleEntry("x", "w", 2);
+        finder.handleEntry("y", "w", 3);
 
-        assertThat(finder.costs).containsKeys("x");
+        assertThat(finder.costs).containsKeys("x", "y");
         assertThat(finder.costs.get("x")).contains(entry("y", 1), entry("w", 2));
         assertThat(finder.costs.get("y")).contains(entry("w", 3));
     }
