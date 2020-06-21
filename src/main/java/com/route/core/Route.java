@@ -8,10 +8,14 @@ public class Route {
     private final List<String> path;
     private int cost;
 
-    public Route(String origin) {
+    public Route() {
         path = new ArrayList<>();
-        path.add(origin);
         cost = 0;
+    }
+
+    public Route(String origin) {
+        this();
+        path.add(origin);
     }
 
     public Route(Route that) {
