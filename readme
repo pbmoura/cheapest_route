@@ -1,0 +1,39 @@
+A solução foi desenvolvida usando Java 8 e Maven 3
+
+O pacote com.route.core contém o serviço de cálculo de rota mais curta:
+- Route presenta uma rota.
+- RouteFinder é um serviço que calcular a melhor rota.
+- RouteFileListener define a interface para que o o RouteFinder atualize suas definições de rota de maneira reativa.
+
+O pacote com.route.persistence contém a classe RoutesFileHandler, responsável por fazer leitura e escrita no arquivo de rotas.
+
+O pacote com.roue.ui contém as classes encarregadas de prover interface com o usuário:
+- CommandLineInterface para consulta de rotas em linha de comando
+- RestInterface para consulta e inserção de rotas por interface REST
+
+
+build e test:
+mvn clean package
+
+executar:
+./mysolution input-file
+
+
+API REST
+O serviço REST usa a porta 4567 e aceita os seguintes métodos:
+- GET /find/:from/:to
+exemplo:
+http://localhost:4567/find/GRU/CDG
+O retorno é um JSON na forma
+{
+  "path" : [ "GRU", "BRC", "SCL", "ORL", "CDG" ],
+  "cost" : 40
+}
+- POST /add
+o corpo desta requisição deve ser um JSON na forma
+{
+  "origin": "ORI",
+  "destination": "DES",
+  "cost": "1"
+}
+Retorna código 201 em caso de sucesso o 400 em caso de falha em processar o JSON.
